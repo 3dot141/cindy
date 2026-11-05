@@ -192,7 +192,7 @@ describe('settings search catalog', () => {
       if (target === 'personal-im-wechat') continue;
       if (target) {
         const dynamicProviderAnchor =
-          /^cindy-im-(slack|telegram|x)$/.test(target) &&
+          /^cindy-im-(slack|telegram|x|feishu)$/.test(target) &&
           source.includes('id={\`cindy-im-\${provider}\`}');
         expect(source.includes('id="' + target + '"') || dynamicProviderAnchor, target).toBe(true);
       }
@@ -220,6 +220,7 @@ describe('settings search catalog', () => {
       expect(visible).toContain('imBot.cindy');
       expect(visible).toContain('imBot.cindy.telegram');
       expect(visible).toContain('imBot.cindy.x');
+      expect(visible).toContain('imBot.cindy.feishu');
       expect(visible).toContain('imBot.discord');
       expect(visible).toContain('imBot.telegram');
       expect(visible).toContain('imBot.feishu');
